@@ -85,7 +85,7 @@ Modify the configuration file (local_model ) to specify models different encoder
 
 #### 🤝 Contributing
 Contributions are welcome! If you find a bug, want to suggest a feature, or improve documentation, feel free to submit an issue or a pull request.
-This project is currently under development. Please expect some bugs as we actively work on adding features and making improvements.  
+This project is currently under development. Please expect some bugs as I actively work on adding features and making improvements.  
 
 #### 📜 License
 This project is licensed under the MIT License.
