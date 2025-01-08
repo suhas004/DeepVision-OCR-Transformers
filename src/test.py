@@ -34,7 +34,7 @@ from pytorch_lightning import Trainer, seed_everything
 trocr_lm = trocr_LightningModule(Context, constants, num_epochs=30)
 
 
-trocr_lm.load_from_checkpoint('/mnt/suhas/OCR/trocr_train/models/exp_1_base_dbnet_128/epoch=25-step=155402-val_accuracy=0.9170.ckpt')
+trocr_lm.load_from_checkpoint('')
 
 print("trocr_lm:", trocr_lm)
 

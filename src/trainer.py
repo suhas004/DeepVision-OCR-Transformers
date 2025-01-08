@@ -288,38 +288,38 @@ class trocr_LightningModule(pl.LightningModule):
         avg_accuracy = sum([x[0] for x in self.validation_step_outputs]) / len(
             self.validation_step_outputs
         )
-        # avg_precision = sum([x[1] for x in self.validation_step_outputs]) / len(
-        #     self.validation_step_outputs
-        # )
-        # avg_recall = sum([x[2] for x in self.validation_step_outputs]) / len(
-        #     self.validation_step_outputs
-        # )
-        # avg_f1 = sum([x[3] for x in self.validation_step_outputs]) / len(
-        #     self.validation_step_outputs
-        # )
+        avg_precision = sum([x[1] for x in self.validation_step_outputs]) / len(
+            self.validation_step_outputs
+        )
+        avg_recall = sum([x[2] for x in self.validation_step_outputs]) / len(
+            self.validation_step_outputs
+        )
+        avg_f1 = sum([x[3] for x in self.validation_step_outputs]) / len(
+            self.validation_step_outputs
+        )
         avg_cer = sum([x[1] for x in self.validation_step_outputs]) / len(
             self.validation_step_outputs
         )
-        # avg_correct_hcp = sum([x[5] for x in self.validation_step_outputs]) / len(
-        #     self.validation_step_outputs
-        # )
+        avg_correct_hcp = sum([x[5] for x in self.validation_step_outputs]) / len(
+            self.validation_step_outputs
+        )
 
         # log all the above values
-        # self.log(
-        #     "avg_val_accuracy_epoch",
-        #     avg_accuracy,
-        #     on_epoch=True,
-        #     prog_bar=True,
-        #     logger=True,
-        #     sync_dist=True,
-        # )
-        # self.log("avg_val_precision_epoch", avg_precision, logger=True, sync_dist=True)
-        # self.log("avg_val_recall_epoch", avg_recall, logger=True, sync_dist=True)
-        # self.log("avg_val_f1_epoch", avg_f1, logger=True, sync_dist=True)
-        # self.log("avg_val_cer_epoch", avg_cer, logger=True, sync_dist=True)
-        # self.log(
-        #     "avg_val_correct_hcp_epoch", avg_correct_hcp, logger=True, sync_dist=True
-        # )
+        self.log(
+            "avg_val_accuracy_epoch",
+            avg_accuracy,
+            on_epoch=True,
+            prog_bar=True,
+            logger=True,
+            sync_dist=True,
+        )
+        self.log("avg_val_precision_epoch", avg_precision, logger=True, sync_dist=True)
+        self.log("avg_val_recall_epoch", avg_recall, logger=True, sync_dist=True)
+        self.log("avg_val_f1_epoch", avg_f1, logger=True, sync_dist=True)
+        self.log("avg_val_cer_epoch", avg_cer, logger=True, sync_dist=True)
+        self.log(
+            "avg_val_correct_hcp_epoch", avg_correct_hcp, logger=True, sync_dist=True
+        )
 
         if avg_accuracy > self.best_accuracy:
             self.best_accuracy = avg_accuracy
