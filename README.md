@@ -13,7 +13,7 @@ DeepVision-OCR-Transformers is a robust Optical Character Recognition (OCR) fram
 
 Here's an example of the model's output:
 
-![Example Predictions](images/example-predictions.png)
+![Example Predictions](.resources/example-predictions.png)
 
 ## 📂 Project Structure
 ```
